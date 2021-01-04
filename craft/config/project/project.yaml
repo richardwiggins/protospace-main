@@ -1,0 +1,17 @@
+dateModified: 1609782469
+email:
+  fromEmail: richard@pooleyville.uk
+  fromName: Protospace
+  transportType: craft\mail\transportadapters\Sendmail
+system:
+  edition: solo
+  live: true
+  name: Protospace
+  schemaVersion: 3.5.13
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

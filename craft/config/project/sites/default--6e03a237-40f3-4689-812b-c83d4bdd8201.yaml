@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-GB
+name: Protospace
+primary: true
+siteGroup: f4cdb00f-d57c-4617-acd2-4a00fe65ea9d
+sortOrder: 1
