@@ -27,6 +27,10 @@ Usage: codyhouse.co/license
   // class added when navigation is visible - small devices only
 }
 
+.html-wrapper__nav--is-visible {
+  overflow: hidden;
+}
+
 .f-header__mobile-content { // logo + menu button on small devices
   position: relative;
   display: flex;
@@ -61,7 +65,7 @@ Usage: codyhouse.co/license
   left: 0;
   width: 100%;
   max-height: 100vh;
-  overflow: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   padding: 0 0 var(--space-md);

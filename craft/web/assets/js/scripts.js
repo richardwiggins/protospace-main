@@ -1263,6 +1263,7 @@ function resetFocusTabsStyle() {
 // Usage: codyhouse.co/license
 (function() {
   var flexHeader = document.getElementsByClassName('js-f-header');
+  var htmlWrapper = document.getElementsByClassName('html-wrapper');
 	if(flexHeader.length > 0) {
 		var menuTrigger = flexHeader[0].getElementsByClassName('js-anim-menu-btn')[0],
 			firstFocusableElement = getMenuFirstFocusable();
@@ -1323,7 +1324,7 @@ function resetFocusTabsStyle() {
 		
 		function toggleMenuNavigation(bool) { // toggle menu visibility on small devices
 			Util.toggleClass(document.getElementsByClassName('f-header__nav')[0], 'f-header__nav--is-visible', bool);
-			Util.toggleClass(flexHeader[0], 'f-header--expanded', bool);
+			Util.toggleClass(htmlWrapper[0], 'html-wrapper__nav--is-visible', bool);
 			menuTrigger.setAttribute('aria-expanded', bool);
 			if(bool) firstFocusableElement.focus(); // move focus to first focusable element
 			else if(focusMenu) {
