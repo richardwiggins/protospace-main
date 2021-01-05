@@ -79,7 +79,7 @@ gulp.task('browserSync', gulp.series(function (done) {
 
 gulp.task('watch', gulp.series(['browserSync', 'sass', 'scripts'], function () {
   gulp.watch('craft/templates/**/*.twig', gulp.series(reload));
-  gulp.watch('/css/**/*.scss', gulp.series(['sass']));
+  gulp.watch('craft/web/assets/css/**/*.scss', gulp.series(['sass']));
   gulp.watch(componentsJsPath, gulp.series(['scripts']));
 }));
 

@@ -8,11 +8,12 @@ Usage: codyhouse.co/license
 -------------------------------- */
 
 :root {
-  --f-header-height: 50px;
-  --f-header-logo-width: 104px;
+  --f-header-height: 60px;
+  --f-header-logo-width: 150px;
 
   @include breakpoint(md) {
     --f-header-height: 70px;
+    --f-header-logo-width: 180px;
   }
 }
 
@@ -47,10 +48,11 @@ Usage: codyhouse.co/license
 }
 
 .f-header__nav-control { // menu button
-  --anim-menu-btn-size: 40px;
+  --anim-menu-btn-size: 100px;
   // 🍔 icon
   --anim-menu-btn-icon-size: 28px;
   --anim-menu-btn-icon-stroke: 2px;
+  justify-content: flex-end;
 }
 
 .f-header__nav {
@@ -88,6 +90,7 @@ Usage: codyhouse.co/license
   opacity: 1;
   transform: translateY(0);
   transition: visibility 0s, opacity .3s, transform .3s;
+  height: 100vh;
 }
 
 .f-header__nav-logo-wrapper {

@@ -4,17 +4,42 @@
 
 // --------------------------------
 
+@font-face {
+  font-family: 'Uxum Grotesque Regular';
+  src: url('../fonts/UxumGrotesque-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/UxumGrotesque-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/UxumGrotesque-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/UxumGrotesque-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/UxumGrotesque-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/UxumGrotesque-Regular.otf')  format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Uxum Grotesque Bold';
+  src: url('../fonts/UxumGrotesque-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/UxumGrotesque-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/UxumGrotesque-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/UxumGrotesque-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/UxumGrotesque-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/UxumGrotesque-Bold.otf')  format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   // font family
-  --font-primary: UxumGrotesque-Regular, system-ui, sans-serif;
+  --font-primary: 'Uxum Grotesque Regular', system-ui, sans-serif;
+  --font-bold: 'Uxum Grotesque Bold', system-ui, sans-serif;
 
   // font size
-  --text-base-size: 1em; // body font-size
-  --text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
+  --text-base-size: 1.1em; // body font-size
+  --text-scale-ratio: 1.175; // multiplier used to generate the type scale values 👇
   
   // line-height
   --body-line-height: 1.4;
-  --heading-line-height: 1.2;
+  --heading-line-height: 1.05;
   
   // capital letters - used in combo with the lhCrop mixin
   --font-primary-capital-letter: 1;
