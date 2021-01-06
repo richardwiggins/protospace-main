@@ -29,22 +29,25 @@ Usage: codyhouse.co/license
   position: relative;
   display: block;
   font-size: var(--anim-menu-btn-icon-size);
-  width: 1em;
+  width: .7em;
   height: var(--anim-menu-btn-icon-stroke);
   color: inherit;
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   transform: scale(1);
   
+  border-radius: 100%;
+  height: .7em;
+  
   &::before, &::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: var(--anim-menu-btn-icon-stroke);
+    width: 0;
     background-image: inherit;
-    border-radius: inherit;
+    border-radius: 0;
   }
 }
 
@@ -64,25 +67,29 @@ Usage: codyhouse.co/license
     transition: inherit;
   }
 
-  &::before { // line top
-    transform: translateY(-0.25em) rotate(0);
-  }
-
-  &::after { // line bottom
-    transform: translateY(0.25em) rotate(0);
-  }
+//   &::before { // line top
+//     transform: translateY(-0.25em) rotate(0);
+//   }
+// 
+//   &::after { // line bottom
+//     transform: translateY(0.25em) rotate(0);
+//   }
 }
 
 .anim-menu-btn--state-b {
   .anim-menu-btn__icon--close {
     background-size: 0% 100%;
+    
+    &::before, &::after {
+      width: 100%;
+    }
 
     &::before {
-      transform: translateY(0) rotate(45deg);
+      transform: translateY(0.3em) rotate(45deg);
     }
 
     &::after {
-      transform: translateY(0) rotate(-45deg);
+      transform: translateY(0.3em) rotate(-45deg);
     }
   }
 }
