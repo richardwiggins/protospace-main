@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: fbc8b9f6-8bbb-4cbd-82fa-0feb9bbdcec3
+handle: seoKeywords
+instructions: ''
+name: 'SEO Keywords'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

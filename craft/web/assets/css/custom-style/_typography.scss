@@ -5,6 +5,18 @@
 // --------------------------------
 
 @font-face {
+  font-family: 'Uxum Grotesque Ultralight';
+  src: url('../fonts/UxumGrotesque-UltraLight.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/UxumGrotesque-UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/UxumGrotesque-UltraLight.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/UxumGrotesque-UltraLight.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/UxumGrotesque-UltraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/UxumGrotesque-UltraLight.otf')  format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Uxum Grotesque Regular';
   src: url('../fonts/UxumGrotesque-Regular.eot'); /* IE9 Compat Modes */
   src: url('../fonts/UxumGrotesque-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -30,6 +42,7 @@
 
 :root {
   // font family
+  --font-light: 'Uxum Grotesque Ultralight', system-ui, sans-serif;
   --font-primary: 'Uxum Grotesque Regular', system-ui, sans-serif;
   --font-bold: 'Uxum Grotesque Bold', system-ui, sans-serif;
 
@@ -63,14 +76,21 @@
 @supports(--css: variables) {
   @include breakpoint(md) {
     :root {
-      --text-base-size: 1.25em;
-      --text-scale-ratio: 1.3;
+      --text-base-size: 1.3em;
+      --text-scale-ratio: 1.26;
     }
   }
 
   @include breakpoint(lg) {
     :root {
       --text-base-size: 1.4em;
+    }
+  }
+  
+  @include breakpoint(xl) {
+    :root {
+      --text-base-size: 1.5em;
+      --text-scale-ratio: 1.3;
     }
   }
 }
@@ -80,12 +100,13 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-primary);
-  font-weight: 700;
+  font-family: var(--font-bold);
+  font-weight: 400;
 }
 
 // font family
 .font-primary { font-family: var(--font-primary); }
+.font-light { font-family: var(--font-light); }
 
 // color
 .color-secondary-darker { color: alpha(var(--color-secondary-darker), var(--color-o, 1)); }
@@ -114,7 +135,7 @@ mark {
 }
 
 .text-component {
-  --line-height-multiplier: 1;
+  --line-height-multiplier: 0.9;
   --text-vspace-multiplier: 1;
 
   blockquote {
@@ -130,6 +151,24 @@ mark {
   figcaption {
     font-size: var(--text-sm);
     color: var(--color-contrast-medium);
+  }
+  
+  a {
+    background-repeat: no-repeat;
+    will-change: background-size;
+    transition: background-size .3s var(--ease-in-out);
+    text-decoration: none;
+    background-size: 0% 100%;
+    background-image: linear-gradient(transparent calc(100% - 3px), currentColor calc(100% - 3px), currentColor calc(100% - 2px), transparent 2px);
+  
+    &:hover {
+      background-size: 100% 100%;
+    }
+  }
+  
+  b, strong, .text-bold {
+    font-family: var(--font-bold);
+    font-weight: 400;
   }
 }
 

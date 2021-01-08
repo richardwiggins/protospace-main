@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: events
+name: Events
+propagationMethod: all
+siteSettings:
+  6e03a237-40f3-4689-812b-c83d4bdd8201:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/event
+    uriFormat: 'events/{slug}'
+type: channel

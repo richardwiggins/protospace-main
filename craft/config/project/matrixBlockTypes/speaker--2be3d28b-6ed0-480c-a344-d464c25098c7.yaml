@@ -1,0 +1,252 @@
+field: a864744f-ac09-4334-b31b-ca0d6fdf3f27
+fieldLayouts:
+  1e2025dc-a8e8-4c9c-926e-d6f6724cc7fe:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 423f546f-273e-4b24-b67b-d0ee31f0e5de
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3968b067-5326-4d75-ada8-255e9680c279
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 07a4486e-a15e-4fd2-80e8-f1825a542860
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ff5e5054-5e82-4ecc-af17-f0e50be5de0b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 07c7d4ef-99d9-40f7-b869-f95487c8d2d1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c32f3aef-7623-4b13-ace6-b5aea41805e1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 78af51bd-057e-49a4-8865-90a1ba284343
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7ed03e50-efe5-43ce-8c2f-d2af7c461031
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  07a4486e-a15e-4fd2-80e8-f1825a542860:
+    contentColumnType: text
+    fieldGroup: null
+    handle: talkTitle
+    instructions: ''
+    name: 'Talk Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  07c7d4ef-99d9-40f7-b869-f95487c8d2d1:
+    contentColumnType: time
+    fieldGroup: null
+    handle: time
+    instructions: ''
+    name: Time
+    searchable: false
+    settings:
+      max: '23:30'
+      min: '08:00'
+      minuteIncrement: 5
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Time
+  3968b067-5326-4d75-ada8-255e9680c279:
+    contentColumnType: text
+    fieldGroup: null
+    handle: bio
+    instructions: ''
+    name: Bio
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  423f546f-273e-4b24-b67b-d0ee31f0e5de:
+    contentColumnType: text
+    fieldGroup: null
+    handle: fullName
+    instructions: ''
+    name: 'Full Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  78af51bd-057e-49a4-8865-90a1ba284343:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profilePhoto
+    instructions: ''
+    name: 'Profile Photo'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:a1ee91c7-d29e-4ada-9988-84807302f561'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Add a profile photo'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:a1ee91c7-d29e-4ada-9988-84807302f561'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  7ed03e50-efe5-43ce-8c2f-d2af7c461031:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: website
+    instructions: ''
+    name: Website
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  c32f3aef-7623-4b13-ace6-b5aea41805e1:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: qA
+    instructions: 'Will be partaking in a Q&A'
+    name: 'Q&A'
+    searchable: false
+    settings:
+      default: false
+      offLabel: 'No'
+      onLabel: 'Yes'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  ff5e5054-5e82-4ecc-af17-f0e50be5de0b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: talkDescription
+    instructions: ''
+    name: 'Talk Description'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: speaker
+name: Speaker
+sortOrder: 1

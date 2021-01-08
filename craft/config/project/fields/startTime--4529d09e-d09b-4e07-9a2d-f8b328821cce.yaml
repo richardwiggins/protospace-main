@@ -1,0 +1,13 @@
+contentColumnType: time
+fieldGroup: a15f74ea-ebc2-4656-8557-e13b8b6a612f
+handle: startTime
+instructions: ''
+name: 'Start Time'
+searchable: false
+settings:
+  max: '23:30'
+  min: '08:00'
+  minuteIncrement: 15
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Time

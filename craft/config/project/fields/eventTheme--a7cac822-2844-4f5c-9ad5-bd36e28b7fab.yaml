@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: a15f74ea-ebc2-4656-8557-e13b8b6a612f
+handle: eventTheme
+instructions: ''
+name: 'Event Theme'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Choose a theme'
+  showSiteMenu: true
+  source: 'group:9e32dbea-2757-48d1-a145-5513ee93b624'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

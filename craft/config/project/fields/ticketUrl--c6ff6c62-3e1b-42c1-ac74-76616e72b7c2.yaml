@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: a15f74ea-ebc2-4656-8557-e13b8b6a612f
+handle: ticketUrl
+instructions: ''
+name: 'Ticket URL'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

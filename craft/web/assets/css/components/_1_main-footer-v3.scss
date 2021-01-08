@@ -120,3 +120,16 @@ Usage: codyhouse.co/license
     }
   }
 }
+
+// .wcb-d {
+//   text-align: left !important;
+// }
+
+#wcb {
+  --b1: var(--color-black) !important;
+  --b2: var(--color-primary) !important;
+  font-size: 15px;
+  text-align: left !important;
+  color: var(--b1);
+}
+

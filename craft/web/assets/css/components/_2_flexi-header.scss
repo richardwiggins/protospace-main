@@ -11,7 +11,7 @@ Usage: codyhouse.co/license
   --f-header-height: 60px;
   --f-header-logo-width: 150px;
 
-  @include breakpoint(md) {
+  @include breakpoint(sm) {
     --f-header-height: 70px;
     --f-header-logo-width: 180px;
   }
@@ -71,7 +71,7 @@ Usage: codyhouse.co/license
   padding: 0 0 var(--space-md);
   background-color: var(--color-bg);
   box-shadow: var(--shadow-md);
-  font-size: var(--text-md); // edit font size of all nav elements
+  font-size: var(--text-xxl); // edit font size of all nav elements
   z-index: 1;
 
   visibility: hidden;
@@ -85,7 +85,7 @@ Usage: codyhouse.co/license
     top: 0;
     height: var(--f-header-height);
     background-color: inherit;
-    border-bottom: 1px solid var(--color-contrast-lower);
+    border-bottom: 1px solid var(--color-primary-dark);
   }
 }
 
@@ -95,15 +95,24 @@ Usage: codyhouse.co/license
   transform: translateY(0);
   transition: visibility 0s, opacity .3s, transform .3s;
   height: 100vh;
+  background-color: var(--color-primary-darker);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .f-header__nav-logo-wrapper {
   display: none; // hide logo nav on small devices
 }
 
+.f-header__nav-grid {
+  // margin-top: var(--space-md);
+}
+
 .f-header__item {
   flex-shrink: 0;
-  border-bottom: 1px solid var(--color-contrast-lower);
+  // border-bottom: 1px solid var(--color-contrast-lower);
 }
 
 .f-header__dropdown-icon {
@@ -139,7 +148,7 @@ Usage: codyhouse.co/license
   padding-left: var(--space-md); // offset sub nav
 }
 
-@include breakpoint(md) {
+@include breakpoint(sm) {
   .f-header__mobile-content {
     display: none; // hide logo + menu (mobile content)
   }
@@ -180,6 +189,7 @@ Usage: codyhouse.co/license
 
   .f-header__nav-grid {
     height: 100%;
+    margin-top: 0;
   }
 
   .f-header__item {

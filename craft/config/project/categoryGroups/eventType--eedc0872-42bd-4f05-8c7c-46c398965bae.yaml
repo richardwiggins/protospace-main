@@ -1,0 +1,40 @@
+fieldLayouts:
+  e2871c71-ba2f-468d-a26a-53f4c604af09:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: eventType
+name: 'Event Type'
+siteSettings:
+  6e03a237-40f3-4689-812b-c83d4bdd8201:
+    hasUrls: true
+    template: null
+    uriFormat: 'event-type/{slug}'
+structure:
+  maxLevels: 1
+  uid: 90566d15-3e64-4633-8924-bb885a4659ef

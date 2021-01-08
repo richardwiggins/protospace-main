@@ -1,14 +1,20 @@
-dateModified: 1609782469
+dateModified: 1610131718
 email:
   fromEmail: richard@pooleyville.uk
   fromName: Protospace
   transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
-  edition: solo
+  edition: pro
   live: true
   name: Protospace
+  retryDuration: null
   schemaVersion: 3.5.13
-  timeZone: America/Los_Angeles
+  timeZone: Europe/London
 users:
   allowPublicRegistration: false
   defaultGroup: null

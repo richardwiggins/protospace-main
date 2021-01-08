@@ -1,0 +1,36 @@
+fieldLayouts:
+  609799b8-76d6-42e6-8ef6-684e92427187:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d00d08f2-b225-4653-b792-c4cd7b592374
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1be90ced-808f-4d58-be52-fb550713dcb5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0789647f-ed80-4f51-93ce-69affb675b4d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: globalSeo
+name: 'Global SEO'

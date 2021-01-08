@@ -1,0 +1,194 @@
+/* -------------------------------- 
+
+File#: _1_details-list
+Title: Details List
+Descr: Pairs of related information displayed in a list
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.details-list {
+  a {
+    
+  }
+}
+
+.details-list__item {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all .3s var(--ease-in-out);
+  display: flex;
+  padding-left: var(--component-padding);
+  padding-right: var(--component-padding);
+  padding-bottom: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-contrast-low);
+  
+  --gap-x: var(--space-xxxs);
+
+  > * {
+    margin-bottom: var(--space-xxs); // vertical spacing
+  }
+  
+  
+  &.theme--sustainability:hover,
+  &.theme--sustainability:active {
+    box-shadow: 0 0 10rem .1px var(--color-accent);
+    background-color: var(--color-accent);
+    color: var(--color-black);
+  }
+  
+  &.theme--lifestyle:hover,
+  &.theme--lifestyle:active {
+    box-shadow: 0 0 10rem .1px var(--color-tertiary);
+    background-color: var(--color-tertiary);
+    color: var(--color-black);
+  }
+  
+  &.theme--business:hover,
+  &.theme--business:active {
+    box-shadow: 0 0 10rem .1px var(--color-secondary-lighter);
+    background-color: var(--color-secondary-lighter);
+    color: var(--color-black);
+  }
+  
+  @include breakpoint(xs) {
+    > * {
+      margin-bottom: 0;
+    }
+  }
+  
+  &:last-child {
+    border-bottom: 1px solid var(--color-contrast-low);
+  }
+
+  dd:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.details-list__dt {
+  position: relative;
+  
+  @include breakpoint(md) {
+    align-self: center;
+    font-size: var(--text-md);
+  }
+  
+  @include breakpoint(xl) {
+    font-size: var(--text-lg);
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: -16px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    transition: all .3s var(--ease-in-out);
+    
+    @include breakpoint(xs) {
+      left: 0;
+    }
+    
+    @include breakpoint(md) {
+      width: 22px;
+      height: 22px;
+      top: 1px;
+    }
+    
+    @include breakpoint(xl) {
+      width: 26px;
+      height: 26px;
+      top: 7px;
+    }
+    
+    .theme--sustainability & {
+      background-color: var(--color-accent);
+    }
+    
+    .theme--sustainability:hover &,
+    .theme--sustainability:active & {
+      background-color: var(--color-black);
+    }
+    
+    .theme--lifestyle & {
+      background-color: var(--color-tertiary);
+    }
+    
+    .theme--lifestyle:hover &,
+    .theme--lifestyle:active & {
+      background-color: var(--color-black);
+    }
+    
+    .theme--business & {
+      background-color: var(--color-secondary-lighter);
+    }
+    
+    .theme--business:hover &,
+    .theme--business:active & {
+      background-color: var(--color-black);
+    }
+  }
+}
+
+.details-list__dt--title {
+  display: block;
+  // margin-left: 20px;
+  
+  @include breakpoint(xs) {
+    margin-left: 20px;
+  }
+  
+  @include breakpoint(md) {
+    margin-left: 33px;
+  }
+  
+  @include breakpoint(xl) {
+    margin-left: 42px;
+  }
+}
+
+.details-list__dd {
+  @include breakpoint(sm) {
+   align-self: center; 
+  }
+  
+  @include breakpoint(xl) {
+    font-size: var(--text-md);
+  }
+}
+
+.details-list__dd--type {
+  transition: all .3s var(--ease-in-out);
+  
+  .theme--sustainability & {
+    color: var(--color-accent);
+  }
+  
+  .theme--sustainability:hover &,
+  .theme--sustainability:active & {
+    color: var(--color-black);
+  }
+  
+  .theme--lifestyle & {
+    color: var(--color-tertiary);
+  }
+  
+  .theme--lifestyle:hover &,
+  .theme--lifestyle:active & {
+    color: var(--color-black);
+  }
+  
+  .theme--business & {
+    color: var(--color-secondary-lighter);
+  }
+  
+  .theme--business:hover &,
+  .theme--business:active & {
+    color: var(--color-black);
+  }
+}
+

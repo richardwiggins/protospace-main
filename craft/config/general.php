@@ -24,6 +24,12 @@ return [
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => App::env('SECURITY_KEY'),
+        
+        'aliases' => [
+            '@basePath' => getenv('CRAFTENV_BASE_PATH'),
+            '@baseURL' => getenv('CRAFTENV_BASE_URL'),
+            '@rootUrl' => getenv('PRIMARY_SITE_URL'),
+        ],
     ],
 
     // Dev environment settings
