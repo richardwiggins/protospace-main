@@ -19,7 +19,8 @@
   line-height: 1.2;
   @include fontSmooth;
   box-shadow: var(--shadow-xs);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  font-family: var(--font-bold);
 
   &:hover {
     box-shadow: var(--shadow-sm);

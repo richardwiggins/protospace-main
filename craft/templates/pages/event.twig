@@ -19,7 +19,7 @@
 {% set theme = entry.eventTheme.one %}
 {% set startTime = entry.startTime %}
 
-<div class="container padding-y-lg">
+<div class="container padding-top-lg">
 	<div class="grid gap-sm">
 		<div class="col-11@sm col-10@md offset-1@md col-9@lg offset-2@lg col-8@xl offset-3@xl order-2@sm">
 			<div class="margin-bottom-xxxs">
@@ -33,7 +33,7 @@
 				{% endif %}
 				{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.Y') }}{% else %}TBC{% endif %}
 				{% if startTime %} . {{ startTime|date('H:i') }}{% endif %}{% if entry.finishTime %}—{{ entry.finishTime|date('H:i') }}{% endif %}
-				{% if entry.communityEvent %} . Community Event{% else %} . protospace Event{% endif %}
+				{% if entry.communityEvent %} . Community Event{% else %} . Proto<span class="font-bold">space</span> Event{% endif %}
 			</div>
 			<h1 class="text-xxl">{{ entry.title }}</h1>
 		</div>
@@ -41,11 +41,18 @@
 			{{ theme.title }}
 		</div>
 		
-		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl padding-y-sm order-3@sm">
-			<div class="text-component line-height-lg v-space-lg">
+		{% if entry.description %}
+		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl order-3@sm">
+			<div class="text-component">
+				<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs">Register your ticket</a>
+			</div>
+			<div class="text-component padding-y-md">
 				{{ entry.description }}
+				
+				<p><a href="{{ entry.website }}" target="_blank" class="text-bold">Visit the event website &nearr;</a></p>
 			</div>
 		</div>
+		{% endif %}
 	</div>
 </div>
 	
