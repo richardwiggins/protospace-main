@@ -14,90 +14,39 @@
 
 {% block main %}
 
-{% set thisEventDate = entry.dateField | date('M j Y') %}
+{# {% set thisEventDate = entry.dateField | date('M j Y') %} #}
+{% set type = entry.eventType.all %}
+{% set theme = entry.eventTheme.one %}
+{% set startTime = entry.startTime %}
 
-	<div class="container padding-y-lg">
-		<div class="grid gap-md">
-			<div class="col-11@sm offset-1@sm col-10@md offset-2@md offset-3@lg offset-4@xl">
-				<h1 class="text-xxl">{{ entry.title }}</h1>
+<div class="container padding-y-lg">
+	<div class="grid gap-sm">
+		<div class="col-11@sm col-10@md offset-1@md col-9@lg offset-2@lg col-8@xl offset-3@xl order-2@sm">
+			<div class="margin-bottom-xxxs">
+				{% if startTime %}
+					{% if startTime|date('H:i') < '18:00' %}
+						<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg>
+					{% else %}
+						<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2.5.9 0 4.1 0 7.9 0 12.4 3.6 16 8.1 16c3.8 0 6.9-2.5 7.9-6C9.9 11.7 4.3 6.1 6 0z" fill="#FFF" fill-rule="nonzero"/></svg>
+					{% endif %}
+					&nbsp;
+				{% endif %}
+				{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.Y') }}{% else %}TBC{% endif %}
+				{% if startTime %} . {{ startTime|date('H:i') }}{% endif %}{% if entry.finishTime %}—{{ entry.finishTime|date('H:i') }}{% endif %}
+				{% if entry.communityEvent %} . Community Event{% else %} . protospace Event{% endif %}
 			</div>
-			
-			<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl padding-y-lg">
-				<div class="text-component line-height-lg v-space-lg">
-					<p><strong>protospace</strong> is a new collaboration between <a href="https://madeinmk.com">Made in MK</a>, <a href="https://mkgeeknight.co.uk">MK Geek Night</a> and <a href="https://pooleyville.uk">Pooleyville</a> and Milton Keynes Council.</p>
+			<h1 class="text-xxl">{{ entry.title }}</h1>
+		</div>
+		<div class="event__title text-md text-xxl@sm text-xxxxl@md color-{{ theme.themeColour }} col-1@sm order-1@sm">
+			{{ theme.title }}
+		</div>
 		
-					<p>We aim to support the tech community in and around Milton Keynes by championing local digital innovation, connecting the community, and providing resources to support the exploration of new ideas, the development of new skills, and opportunities for new collaborations.</p>
-					
-					<p>Alongside our online community, our goal is to create a physical space to host the local community in person and provide a nurturing environment to work, collaborate and share knowledge.</p>
-					
-					{# <p>A series of curated events will commence in 2021 shaped around three umbrella themes of <span class="dot-marker bg-accent" aria-hidden="true"></span> Sustainability, <span class="dot-marker bg-tertiary" aria-hidden="true"></span> Lifestyle and <span class="dot-marker bg-secondary" aria-hidden="true"></span> Business.</p>
-					
-					<p>Comprising talks, interviews, workshops, hackathons, pitches and networking, the programme will be delivered both online and in-person (when we are able to do so). We'll host a diverse range of industry leaders and creators, from near and far, exploring their ideas, experiences and work that have had, or hope to have, a positive impact on our lives.</p> #}
-					
-					<p class="text-lg"><a href="#0">See the upcoming events →</a></p>
-				</div>
+		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl padding-y-sm order-3@sm">
+			<div class="text-component line-height-lg v-space-lg">
+				{{ entry.description }}
 			</div>
 		</div>
 	</div>
-    <div class="container margin-bottom-xs">
-		<form class="grid items-end">
-            <legend class="text-xxl margin-bottom-xs">Events in 2021  <span class="font-light">&darr;</span></legend>
-            <ul class="col-7@sm flex margin-bottom-sm margin-0@sm">
-                <li class="flex-grow">
-                    <div class="text-sm margin-bottom-xs display@sm">January / February / March</div>
-                    <div class="color-accent">Sustainability</div>
-                </li>
-                <li class="flex-grow">
-                    <div class="text-sm margin-bottom-xs display@sm">April / May / June</div>
-                    <div class="color-tertiary">Lifestyle</div>
-                </li>
-                <li class="flex-grow">
-                    <div class="text-sm margin-bottom-xs display@sm">July / August / September</div>
-                    <div class="color-secondary">Business</div>
-                </li>
-            </ul>
-            
-  			<fieldset class="col-5@sm text-right@sm">
-				<legend class="form-legend is-hidden">Filter Events</legend>
-				
-				<ul class="radio-switch-v2" aria-controls="filter-gallery">
-  					<li class="radio-switch-v2__item">
-						<input class="radio-switch-v2__input reset" type="radio" name="radio-category" id="radio1" data-filter="*" checked>
-						<label class="radio-switch-v2__label" for="radio1">All Events</label>
-  					</li>
-					
-  					<li class="radio-switch-v2__item">
-						<input class="radio-switch-v2__input reset" type="radio" name="radio-category" id="radio2" data-filter="category-protospace">
-						<label class="radio-switch-v2__label" for="radio2">Protospace Events</label>
-						<div aria-hidden="true" class="radio-switch-v2__toggle"><span class="radio-switch-v2__marker"></span></div>
-  					</li>
-				</ul>
-  			</fieldset>
-		</form>
-    </div>
-	<dl class="details-list js-filter" id="filter-gallery" data-filter-animation="off">
-		<a href="#0" class="details-list__item grid theme--sustainability js-filter__item" data-filter="category-protospace">
-			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">Sustainable Tech Workshop jhh jhjh j ljhkj hdsd</span></dt>
-			<dd class="details-list__dd col-1 text-right"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg></dd>
-			<dd class="details-list__dd col-3 col-2@xs col-1@md">12.01.21</dd>
-			<dd class="details-list__dd details-list__dd--type col-9 col-3@xs col-2@sm">Workshop <sup class="text-xs">TBC</sup></dd>
-		</a>
-		<a href="#0" class="details-list__item grid theme--lifestyle js-filter__item" data-filter="category-community">
-			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">Sustainable Tech Workshop jhh jhjh j ljhkj hdsd</span></dt>
-			<dd class="details-list__dd col-1 text-right"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg></dd>
-			<dd class="details-list__dd col-3 col-2@xs col-1@md">12.01.21</dd>
-			<dd class="details-list__dd details-list__dd--type col-9 col-3@xs col-2@sm">Workshop</dd>
-		</a>
-		<a href="#0" class="details-list__item grid theme--business js-filter__item" data-filter="category-protospace">
-			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">Sustainable Tech Workshop jhh jhjh j ljhkj hdsd</span></dt>
-			<dd class="details-list__dd col-1 text-right"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg></dd>
-			<dd class="details-list__dd col-3 col-2@xs col-1@md">12.01.21</dd>
-			<dd class="details-list__dd details-list__dd--type col-9 col-3@xs col-2@sm">Workshop</dd>
-		</a>
-	</dl>
-		
-    <div class="margin-top-md" data-fallback-gallery-id="filter-gallery">
-        <p class="color-contrast-medium text-center">No results</p>
-    </div>
+</div>
 	
 {% endblock %}

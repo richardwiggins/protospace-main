@@ -1,0 +1,14 @@
+
+
+.event__title {
+	// @include breakpoint(sm) {
+	// 	margin-left: calc(8.33% + var(--gap-x, 0.75em));
+	// }
+	
+	@include breakpoint(sm) {
+		line-height: 0;
+		transform: rotate(90deg);
+		white-space: nowrap;
+		transform-origin: top left;
+	}
+}

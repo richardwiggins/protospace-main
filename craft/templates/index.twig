@@ -36,7 +36,7 @@
 			</div>
 		</div>
 	</div>
-    <div class="container margin-bottom-xs">
+    <div class="container margin-bottom-xs" id="events">
 		<form class="grid items-end">
             <legend class="text-xxl margin-bottom-xs">Events in 2021  <span class="font-light">&darr;</span></legend>
             <ul class="col-7@sm flex margin-bottom-sm margin-0@sm">
@@ -77,8 +77,6 @@
         {% set type = entry.eventType.all %}
         {% set theme = entry.eventTheme.one %}
         {% set startTime = entry.startTime %}
-        
-        
         
 		<a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }} js-filter__item" data-filter="{% if entry.communityEvent %}category-community{% else %}category-protospace{% endif %}">
 			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">{{ entry.title }}</span></dt>
