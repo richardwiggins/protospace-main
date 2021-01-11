@@ -39,6 +39,8 @@ return [
 
         // Prevent crawlers from indexing pages and following links
         'disallowRobots' => true,
+        
+        'userSessionDuration' => 0,
     ],
 
     // Staging environment settings

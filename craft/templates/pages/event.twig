@@ -44,7 +44,7 @@
 		{% if entry.description %}
 		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl order-3@sm">
 			<div class="text-component">
-				<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs">Register your ticket</a>
+				<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs">Register your ticket &nearr;</a>
 			</div>
 			<div class="text-component padding-y-md">
 				{{ entry.description }}
@@ -54,6 +54,54 @@
 		</div>
 		{% endif %}
 	</div>
+	
+	{% set blocks = entry.speakers.all() %}
+	{% if blocks|length %}
+	<section class="grid gap-sm text-component" id="agenda">
+		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-9@lg offset-3@lg col-8@xl offset-4@xl">
+			<h2 class="">Event Agenda</h2>
+		</div>
+	</section>
+	
+		{% for block in entry.speakers.all() %}
+			{% if block.type == "speaker" %}
+			<div class="grid gap-sm margin-top-md">
+				<div class="order-2@sm col-11@sm col-10@md  col-9@lg offset-3@lg col-8@xl offset-4@xl">
+					<h3>{{ block.fullName }}</h3>
+				</div>
+				<div class="order-1@sm col-1@sm col-2@md text-component text-right@sm">
+					<time class="text-lg@md text-bold">{{ block.time|date('H:i') }}</time>
+				</div>
+			</div>	
+			{% endif %}
+				
+			{# {% if block.type == "session" %}
+				<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-9@lg offset-3@lg col-8@xl offset-4@xl">
+					<h3>{{ block.heading }}</h3>
+				</div>
+			{% endif %} #}
+				{# {% if block.type == "heading" %}
+					<h3>{{ block.heading }}</h3>
+				{% elseif block.type == "text" %}
+					{{ block.text|markdown }}
+				{% elseif block.type == "image" %}
+					{% set image = block.image.one() %}
+					{% if image %}
+						<img src="{{ image.getUrl('thumb') }}" 
+							width="{{ image.getWidth('thumb') }}" 
+							height="{{ image.getHeight('thumb') }}" 
+							alt="{{ image.title }}"
+						>
+					{% endif %}
+				{% elseif block.type == "quote" %}
+					<blockquote>
+						<p>{{ block.quote }}</p>
+						<cite>– {{ block.cite }}</cite>
+					</blockquote>
+				{% endif %} #}
+			{% endfor %}
+	</section>
+	{% endif %}
 </div>
 	
 {% endblock %}

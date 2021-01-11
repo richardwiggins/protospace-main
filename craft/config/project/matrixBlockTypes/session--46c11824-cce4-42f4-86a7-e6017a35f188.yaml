@@ -1,0 +1,100 @@
+field: a864744f-ac09-4334-b31b-ca0d6fdf3f27
+fieldLayouts:
+  7f7b26ef-e500-4f1c-b0c9-ae54c9d26c63:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 89fd4dbc-4574-4bce-906e-978451de0f3a
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f18b7e0b-9e1c-43b0-a7fe-3f2f165a55cb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 963a39d5-268f-48a1-b722-b0500092a740
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  89fd4dbc-4574-4bce-906e-978451de0f3a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  963a39d5-268f-48a1-b722-b0500092a740:
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: ''
+    name: Description
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  f18b7e0b-9e1c-43b0-a7fe-3f2f165a55cb:
+    contentColumnType: time
+    fieldGroup: null
+    handle: time
+    instructions: ''
+    name: Time
+    searchable: false
+    settings:
+      max: '23:30'
+      min: '08:00'
+      minuteIncrement: 5
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Time
+handle: session
+name: Session
+sortOrder: 2
