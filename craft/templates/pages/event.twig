@@ -44,9 +44,9 @@
 		{% if entry.description %}
 		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl order-3@sm">
 			<div class="text-component">
-				<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs">Register your ticket &nearr;</a>
-			</div>
-			<div class="text-component padding-y-md">
+				<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>
+				<p class="text-bold">Location: {{ entry.location }}</p>
+				
 				{{ entry.description }}
 				
 				<p><a href="{{ entry.website }}" target="_blank" class="text-bold">Visit the event website &nearr;</a></p>
@@ -65,12 +65,58 @@
 	
 		{% for block in entry.speakers.all() %}
 			{% if block.type == "speaker" %}
-			<div class="grid gap-sm margin-top-md">
-				<div class="order-2@sm col-11@sm col-10@md  col-9@lg offset-3@lg col-8@xl offset-4@xl">
-					<h3>{{ block.fullName }}</h3>
+			<div class="grid gap-sm margin-y-lg text-component">
+				<div class="color-{{ theme.themeColour }} offset-1@sm col-2@lg offset-2@md offset-1@lg offset-2@xl text-right@lg">
+					{% if block.time %}<time class="text-lg@md text-bold">{{ block.time|date('H:i') }}</time>{% endif %}
 				</div>
-				<div class="order-1@sm col-1@sm col-2@md text-component text-right@sm">
-					<time class="text-lg@md text-bold">{{ block.time|date('H:i') }}</time>
+				{% for image in block.profilePhoto.all() %}
+					{% if block.profilePhoto %}
+					<div class="col-6 col-4@xs col-3@sm offset-1@sm offset-2@md col-2@lg offset-1@lg order-3@lg"><img class="profile__image" src="{{ image.getUrl('profile') }}" alt="{{ block.title }}"></div>
+					{% endif %}
+				{% endfor %}
+				<div class="agenda__details col-8@sm col-7@md offset-0@lg col-6@lg order-2@lg col-5@xl">
+					<div class="text-lg text-bold margin-bottom-xxxs">{{ block.fullName }}</div>
+					{% if block.talkTitle %}<div class="text-xl text-bold margin-bottom-xs">{{ block.talkTitle }}</div>{% endif %}
+					
+					{{ block.talkDescription }}
+					
+					{% if block.bio or block.website %}
+					<details class="details js-details">
+					  <summary class="details__summary js-details__summary" role="button">
+						<span class="flex items-center">
+						  <svg class="icon icon--xxs margin-right-xxxs" aria-hidden="true" viewBox="0 0 12 12"><path d="M2.783.088A.5.5,0,0,0,2,.5v11a.5.5,0,0,0,.268.442A.49.49,0,0,0,2.5,12a.5.5,0,0,0,.283-.088l8-5.5a.5.5,0,0,0,0-.824Z"></path></svg>
+						  <span class="text-bold link">Find out about {{ block.fullName }}</span>
+						</span>
+					  </summary>
+					
+					  <div class="details__content text-component margin-top-xs js-details__content">
+						{{ block.bio }}
+						
+						{% if block.website %}
+						<a href="{{ block.website }}" class="text-bold" target="_blank">Find out more &nearr;</a>
+						{% endif %}
+					  </div>
+					</details>
+					{% endif %}
+					
+				</div>
+			</div>	
+			{% endif %}
+			
+			{% if block.type == "session" %}
+			<div class="grid gap-sm margin-y-lg text-component">
+				<div class="color-{{ theme.themeColour }} offset-1@sm col-2@lg offset-2@md offset-1@lg offset-2@xl text-right@lg">
+					{% if block.time %}<time class="text-lg@md text-bold">{{ block.time|date('H:i') }}</time>{% endif %}
+				</div>
+				
+				<div class="agenda__details col-8@sm col-7@md offset-0@lg col-6@lg order-2@lg col-5@xl">
+					<div class="text-lg	 text-bold margin-bottom-xs">{{ block.heading }}</div>
+					{# {% if block.talkTitle %}<div class="text-xl text-bold margin-bottom-xs">{{ block.talkTitle }}</div>{% endif %} #}
+					
+					{{ block.description }}
+					
+		
+					
 				</div>
 			</div>	
 			{% endif %}
