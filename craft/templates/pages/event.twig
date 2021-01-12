@@ -33,19 +33,27 @@
 				{% endif %}
 				{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.Y') }}{% else %}TBC{% endif %}
 				{% if startTime %} . {{ startTime|date('H:i') }}{% endif %}{% if entry.finishTime %}—{{ entry.finishTime|date('H:i') }}{% endif %}
-				{% if entry.communityEvent %} . Community Event{% else %} . Proto<span class="font-bold">space</span> Event{% endif %}
+				{% if entry.communityEvent %} . Community Event{% else %} . Proto<span class="text-bold">space</span> Event{% endif %}
 			</div>
 			<h1 class="text-xxl">{{ entry.title }}</h1>
 		</div>
-		<div class="event__title text-md text-xxl@sm text-xxxxl@md color-{{ theme.themeColour }} col-1@sm order-1@sm">
-			{{ theme.title }}
-		</div>
+		<div class="event__title text-md text-xxl@sm text-xxxxl@md col-1@sm order-1@sm"><span class="text-bold hide@sm">Theme: </span><span class="color-{{ theme.themeColour }}">{{ theme.title }}</span></div>
 		
 		{% if entry.description or entry.website or entry.ticketUrl or entry.location %}
 		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl order-3@sm">
 			<div class="text-component">
 				{% if entry.ticketUrl %}<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>{% endif %}
-				{% if entry.location %}<p class="text-bold">Location: {{ entry.location }}</p>{% endif %}
+				
+				<p class="text-bold">
+					{% if entry.location %}Location: {{ entry.location }}<br>{% endif %}
+					Format: 
+					<span class="color-{{ theme.themeColour }}">
+					{% for rel in type %}
+						{{ rel.title }}{% if loop.last %}{% else %} . {% endif %}
+					{% endfor %}
+					</span>
+				</p>
+				
 				
 				{{ entry.description }}
 				
@@ -109,7 +117,7 @@
 					{% if block.time %}<time class="text-lg@md text-bold">{{ block.time|date('H:i') }}</time>{% endif %}
 				</div>
 				
-				<div class="agenda__details col-8@sm col-7@md offset-0@lg col-6@lg order-2@lg col-5@xl">
+				<div class="agenda__details col-8@sm offset-1@sm col-7@md offset-2@md col-6@lg offset-0@lg order-2@lg col-5@xl">
 					<div class="text-lg	 text-bold margin-bottom-xs">{{ block.heading }}</div>
 					{# {% if block.talkTitle %}<div class="text-xl text-bold margin-bottom-xs">{{ block.talkTitle }}</div>{% endif %} #}
 					

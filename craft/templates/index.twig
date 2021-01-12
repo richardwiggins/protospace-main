@@ -13,22 +13,26 @@
 {% endif %}
 
 {% block main %}
-	<div class="container padding-y-lg">
+	<div class="container padding-y-lg padding-bottom-xxl@lg">
 		<div class="grid gap-md">
-			<div class="col-11@sm offset-1@sm col-10@md offset-2@md offset-3@lg offset-4@xl">
+			<div class="col-11@sm col-10@md offset-1@lg col-9@lg col-8@xl">
 				<h1 class="text-xxl">A space for the tech community in Milton Keynes to connect, collaborate and share knowledge.</h1>
 			</div>
-			
-			<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl padding-top-lg padding-bottom-md@md">
-				<div class="text-component line-height-lg v-space-lg">
-					{{ entry.body }}
-				</div>
-			</div>
+            
+            <div class="col-11@sm col-9@md col-8@lg offset-1@lg col-8@xl max-width-md">
+                <div class="text-component line-height-lg v-space-lg">
+                    {{ entry.body }}
+                </div>
+            </div>
+            
+            <div class="display@md col-2 offset-1@md circles"></div>
 		</div>
 	</div>
     <div class="container margin-bottom-xs" id="events">
 		<form class="grid items-end">
-            <legend class="text-xxl margin-bottom-xs">Events in 2021  <span class="font-light">&darr;</span></legend>
+            <legend class="text-xxl margin-bottom-xs color-white">Events in 2021  <span class="font-light">&darr;</span></legend>
+            
+            <div class="margin-bottom-xs text-bold text-lg">Protospace Themes</div>
             <ul class="col-7@sm flex margin-bottom-sm margin-0@sm">
                 <li class="flex-grow">
                     <div class="text-sm margin-bottom-xs display@sm">January / February / March</div>

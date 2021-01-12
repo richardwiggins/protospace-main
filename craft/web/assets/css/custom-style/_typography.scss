@@ -134,6 +134,11 @@ mark {
   color: inherit;
 }
 
+.text-bold {
+  font-family: var(--font-bold);
+  font-weight: 400;
+}
+
 .text-component {
   --line-height-multiplier: 0.9;
   --text-vspace-multiplier: 1;
@@ -166,7 +171,7 @@ mark {
     }
   }
   
-  b, strong, .text-bold {
+  b, strong {
     font-family: var(--font-bold);
     font-weight: 400;
   }

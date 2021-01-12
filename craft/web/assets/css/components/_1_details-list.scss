@@ -52,6 +52,13 @@ Usage: codyhouse.co/license
     color: var(--color-black);
   }
   
+  &.theme--other:hover,
+  &.theme--other:active {
+    box-shadow: 0 0 10rem .1px var(--color-contrast-higher);
+    background-color: var(--color-contrast-higher);
+    color: var(--color-black);
+  }
+  
   @include breakpoint(xs) {
     > * {
       margin-bottom: 0;
@@ -131,6 +138,15 @@ Usage: codyhouse.co/license
     .theme--business:active & {
       background-color: var(--color-black);
     }
+    
+    .theme--other & {
+      background-color: var(--color-contrast-higher);
+    }
+    
+    .theme--other:hover &,
+    .theme--other:active & {
+      background-color: var(--color-black);
+    }
   }
 }
 
@@ -188,6 +204,15 @@ Usage: codyhouse.co/license
   
   .theme--business:hover &,
   .theme--business:active & {
+    color: var(--color-black);
+  }
+  
+  .theme--other & {
+    color: var(--color-white);
+  }
+  
+  .theme--other:hover &,
+  .theme--other:active & {
     color: var(--color-black);
   }
 }
