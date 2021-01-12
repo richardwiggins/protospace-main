@@ -54,7 +54,6 @@
 					</span>
 				</p>
 				
-				
 				{{ entry.description }}
 				
 				{% if entry.website %}<p><a href="{{ entry.website }}" target="_blank" class="text-bold">Visit the event website &nearr;</a></p>{% endif %}
@@ -67,7 +66,7 @@
 	{% if blocks|length %}
 	<section class="grid gap-sm text-component" id="agenda">
 		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-9@lg offset-3@lg col-8@xl offset-4@xl">
-			<h2 class="">Event Agenda</h2>
+			<h2 class="text-xxl">Event Agenda</h2>
 		</div>
 	</section>
 	
@@ -83,29 +82,42 @@
 					{% endif %}
 				{% endfor %}
 				<div class="agenda__details col-8@sm col-7@md offset-0@lg col-6@lg order-2@lg col-5@xl">
-					<div class="text-lg text-bold margin-bottom-xxxs">{{ block.fullName }}</div>
-					{% if block.talkTitle %}<div class="text-xl text-bold margin-bottom-xs">{{ block.talkTitle }}</div>{% endif %}
+					<div class="text-xl text-bold margin-bottom-xxxs">{{ block.fullName }}</div>
+					{% if block.talkTitle %}<div class="text-lg text-bold margin-bottom-xs">{{ block.talkTitle }}</div>{% endif %}
 					
 					{{ block.talkDescription }}
 					
-					{% if block.bio or block.website %}
-					<details class="details js-details">
-					  <summary class="details__summary js-details__summary" role="button">
-						<span class="flex items-center">
-						  <svg class="icon icon--xxs margin-right-xxxs" aria-hidden="true" viewBox="0 0 12 12"><path d="M2.783.088A.5.5,0,0,0,2,.5v11a.5.5,0,0,0,.268.442A.49.49,0,0,0,2.5,12a.5.5,0,0,0,.283-.088l8-5.5a.5.5,0,0,0,0-.824Z"></path></svg>
-						  <span class="text-bold link">Find out about {{ block.fullName }}</span>
-						</span>
-					  </summary>
-					
-					  <div class="details__content text-component margin-top-xs js-details__content">
-						{{ block.bio }}
+					{% if block.talkDescription is empty and block.bio %}
+						<div class="text-component margin-top-xs">
+							{{ block.bio }}
+						</div>
+						{% else %}
 						
-						{% if block.website %}
-						<a href="{{ block.website }}" class="text-bold" target="_blank">Find out more &nearr;</a>
+						{% if block.bio %}
+							<details class="details js-details">
+							  <summary class="details__summary js-details__summary" role="button">
+								<span class="flex items-center">
+								  <svg class="icon icon--xxs margin-right-xxxs" aria-hidden="true" viewBox="0 0 12 12"><path d="M2.783.088A.5.5,0,0,0,2,.5v11a.5.5,0,0,0,.268.442A.49.49,0,0,0,2.5,12a.5.5,0,0,0,.283-.088l8-5.5a.5.5,0,0,0,0-.824Z"></path></svg>
+								  <span class="text-bold link">Find out about {{ block.fullName }}</span>
+								</span>
+							  </summary>
+							
+							  <div class="details__content text-component margin-top-xs js-details__content">
+								{{ block.bio }}
+								
+								{# {% if block.website %}
+								<a href="{{ block.website }}" class="text-bold" target="_blank">{{ block.website }} &nearr;</a>
+								{% endif %} #}
+							  </div>
+							</details>
 						{% endif %}
-					  </div>
-					</details>
+					
 					{% endif %}
+					
+					{% if block.website %}
+						<p class="margin-top-xs"><a href="{{ block.website }}" class="text-bold" target="_blank">{{ block.website }} &nearr;</a></p>
+					{% endif %}
+					
 					
 				</div>
 			</div>	
@@ -118,7 +130,7 @@
 				</div>
 				
 				<div class="agenda__details col-8@sm offset-1@sm col-7@md offset-2@md col-6@lg offset-0@lg order-2@lg col-5@xl">
-					<div class="text-lg	 text-bold margin-bottom-xs">{{ block.heading }}</div>
+					<div class="text-xl text-bold margin-bottom-xs">{{ block.heading }}</div>
 					{# {% if block.talkTitle %}<div class="text-xl text-bold margin-bottom-xs">{{ block.talkTitle }}</div>{% endif %} #}
 					
 					{{ block.description }}
