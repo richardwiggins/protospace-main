@@ -1,6 +1,7 @@
 {% set seoTitleGlobal = globalSeo.seoTitle %}
 {% set seoDescriptionGlobal = globalSeo.seoDescription %}
 {% set seoKeywordsGlobal = globalSeo.seoKeywords %}
+{% set defaultPartTitle = globalSeo.defaultPartTitle %}
 
 {% set events = craft.entries({
   section: 'events',
@@ -23,22 +24,22 @@
 	<script>
 	if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
 	</script>
-	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
-  <meta name="title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }}{% else %}{{ seoTitleGlobal }}{% endif %}">
-  <meta name="description" content="A space for the tech community in Milton Keynes to connect, collaborate and share knowledge.">
+	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ defaultPartTitle }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
+  <meta name="title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ defaultPartTitle }}{% else %}{{ seoTitleGlobal }}{% endif %}">
+  <meta name="description" content="{% if seoDescription is defined %}{{ seoDescription }}{% else %}{{ seoDescriptionGlobal }}{% endif %}">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://protospace.uk">
-  <meta property="og:title" content="protospace – connect • collaborate • share">
-  <meta property="og:description" content="A space for the tech community in Milton Keynes to connect, collaborate and share knowledge.">
+  <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ defaultPartTitle }}{% else %}{{ seoTitleGlobal }}{% endif %}">
+  <meta property="og:description" content="{% if seoDescription is defined %}{{ seoDescription }}{% else %}{{ seoDescriptionGlobal }}{% endif %}">
   <meta property="og:image" content="/assets/img/protospace-meta.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://protospace.uk">
-  <meta property="twitter:title" content="protospace – connect • collaborate • share">
-  <meta property="twitter:description" content="A space for the tech community in Milton Keynes to connect, collaborate and share knowledge.">
+  <meta property="twitter:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ defaultPartTitle }}{% else %}{{ seoTitleGlobal }}{% endif %}">
+  <meta property="twitter:description" content="{% if seoDescription is defined %}{{ seoDescription }}{% else %}{{ seoDescriptionGlobal }}{% endif %}">
   <meta property="twitter:image" content="/assets/img/protospace-meta.png">
   
   
