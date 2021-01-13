@@ -40,7 +40,7 @@
 		<div class="event__title text-md text-xxl@sm text-xxxxl@md col-1@sm order-1@sm"><span class="text-bold hide@sm">Theme: </span><span class="color-{{ theme.themeColour }}">{{ theme.title }}</span></div>
 		
 		{% if entry.description or entry.website or entry.ticketUrl or entry.location %}
-		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg offset-3@lg offset-4@xl order-3@sm">
+		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg col-7@xl offset-3@lg offset-4@xl order-3@sm max-width-lg">
 			<div class="text-component">
 				{% if entry.ticketUrl %}<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>{% endif %}
 				
@@ -78,7 +78,7 @@
 				</div>
 				{% for image in block.profilePhoto.all() %}
 					{% if block.profilePhoto %}
-					<div class="col-6 col-4@xs col-3@sm offset-1@sm offset-2@md col-2@lg offset-1@lg order-3@lg"><img class="profile__image" src="{{ image.getUrl('profile') }}" alt="{{ block.title }}"></div>
+					<div class="col-6 col-4@xs col-3@sm offset-1@sm offset-2@md col-2@lg offset-1@lg order-3@lg"><img class="profile__image radius-50%" src="{{ image.getUrl('profile') }}" alt="{{ block.title }}"></div>
 					{% endif %}
 				{% endfor %}
 				<div class="agenda__details col-8@sm col-7@md offset-0@lg col-6@lg order-2@lg col-5@xl">

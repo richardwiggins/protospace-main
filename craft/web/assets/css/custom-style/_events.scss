@@ -13,8 +13,9 @@
 	}
 }
 
-// .agenda__details {
-// 	@include breakpoint(lg) {
-// 		margin-left: var(--offset);
-// 	}
-// }
+.agenda__details {
+	@include breakpoint(lg) {
+		--offset: var(--gap-x);
+		// margin-left: var(--offset);
+	}
+}

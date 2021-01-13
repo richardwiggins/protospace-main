@@ -1,0 +1,43 @@
+field: a8e1cfbf-5594-4c5e-b1ae-50337be2e3bf
+fieldLayouts:
+  f2ecc042-ca58-4e69-b5c6-612db2364a3f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 47ebac2d-266a-4703-9cc5-536724542bd6
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  47ebac2d-266a-4703-9cc5-536724542bd6:
+    contentColumnType: string
+    fieldGroup: null
+    handle: partner
+    instructions: ''
+    name: Partner
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Select Partners'
+      showSiteMenu: false
+      source: null
+      sources:
+        - 'section:4de07478-c039-47a0-897b-67875adf4719'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: partners
+name: Partners
+sortOrder: 2

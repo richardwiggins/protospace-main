@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 3f6f8b14-4a39-4d61-bbf5-0e58e171e61b
+handle: partnerType
+instructions: ''
+name: 'Partner Type'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: 'group:09e6ea29-e559-4392-bd1d-92cf6ea1b5e6'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

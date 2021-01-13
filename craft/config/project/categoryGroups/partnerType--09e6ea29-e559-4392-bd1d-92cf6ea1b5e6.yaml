@@ -1,0 +1,40 @@
+fieldLayouts:
+  9e8e369b-ed23-4dbe-ae42-10d6a59f8a07:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: partnerType
+name: 'Partner Type'
+siteSettings:
+  6e03a237-40f3-4689-812b-c83d4bdd8201:
+    hasUrls: true
+    template: null
+    uriFormat: 'partner-type/{slug}'
+structure:
+  maxLevels: 1
+  uid: 0ab5f3c3-0fdf-4183-9761-9d608c9dfcbb

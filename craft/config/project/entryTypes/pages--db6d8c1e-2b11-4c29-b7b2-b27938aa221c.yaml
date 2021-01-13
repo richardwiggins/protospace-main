@@ -1,0 +1,87 @@
+fieldLayouts:
+  eb78a4a4-227e-4904-be0d-8764043982ce:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2bfe9c32-0ca2-4c6b-8756-f38ea0adae36
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a8e1cfbf-5594-4c5e-b1ae-50337be2e3bf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: d00d08f2-b225-4653-b792-c4cd7b592374
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1be90ced-808f-4d58-be52-fb550713dcb5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0789647f-ed80-4f51-93ce-69affb675b4d
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+handle: pages
+hasTitleField: true
+name: Pages
+section: 286328ac-860b-4dc5-ac25-2a8c4ba4d9aa
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
