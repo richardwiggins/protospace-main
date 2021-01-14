@@ -77,13 +77,17 @@
 .circle-br,
 .logo-text {
   fill: var(--color-white);
+  
+  .html-wrapper__nav--is-visible & {
+    fill: var(--color-black);
+  }
 }
 
 .logo-square {
   fill: var(--color-black);
   
   .html-wrapper__nav--is-visible & {
-    fill: var(--color-primary-darker);
+    fill: var(--color-white);
   }
 }
 

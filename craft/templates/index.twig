@@ -72,8 +72,9 @@
         {% set theme = entry.eventTheme.one %}
         {% set startTime = entry.startTime %}
         
-		<a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }} js-filter__item" data-filter="{% if entry.communityEvent %}category-community{% else %}category-protospace{% endif %}">
-			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">{{ entry.title }}</span></dt>
+		<a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }} js-filter__item{% if entry.communityEvent %} category-community{% endif %}" data-filter="{% if entry.communityEvent %}category-community{% else %}category-protospace{% endif %}">
+			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">{{ entry.title }}</span>
+            <span>A Community event by Barclays</span></dt>
 			<dd class="details-list__dd col-1 text-right">
             {% if startTime %}
                 {# {{ startTime|date('H:i') }} #}

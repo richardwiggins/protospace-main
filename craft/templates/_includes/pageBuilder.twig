@@ -1,0 +1,12 @@
+{% for block in entry.pageBuilder %}
+
+{% switch block.type %}
+
+	{% case "simpleContent" %}
+	{% include '_includes/blocks/simpleContent' %}
+	
+	{% case "partners" %}
+	{% include '_includes/blocks/partners' %}
+	
+{% endswitch %}
+{% endfor %}

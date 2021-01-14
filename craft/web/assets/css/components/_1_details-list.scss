@@ -84,6 +84,10 @@ Usage: codyhouse.co/license
   
   @include breakpoint(xl) {
     font-size: var(--text-lg);
+    
+    .category-community & {
+      font-size: var(--text-md);
+    }
   }
   
   &::before {

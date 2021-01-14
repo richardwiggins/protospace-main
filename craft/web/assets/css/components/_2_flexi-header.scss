@@ -57,6 +57,10 @@ Usage: codyhouse.co/license
   --anim-menu-btn-icon-size: 28px;
   --anim-menu-btn-icon-stroke: 2px;
   justify-content: flex-end;
+  
+  .html-wrapper__nav--is-visible & {
+    color: var(--color-black);
+  }
 }
 
 .f-header__nav {
@@ -95,7 +99,7 @@ Usage: codyhouse.co/license
   transform: translateY(0);
   transition: visibility 0s, opacity .3s, transform .3s;
   height: 100vh;
-  background-color: var(--color-primary-darker);
+  background-color: var(--color-white);
   
   display: flex;
   align-items: center;
@@ -135,6 +139,15 @@ Usage: codyhouse.co/license
 
   .icon {
     flex-shrink: 0;
+  }
+  
+  .html-wrapper__nav--is-visible & {
+    color: var(--color-black);
+    
+    &:hover,
+    &[aria-current="page"] {
+      color: var(--color-primary);
+    }
   }
 }
 
