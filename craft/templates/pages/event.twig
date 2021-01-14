@@ -22,7 +22,7 @@
 <div class="container padding-top-lg">
 	<div class="grid gap-sm">
 		<div class="col-11@sm col-10@md offset-1@md col-9@lg offset-2@lg col-8@xl offset-3@xl order-2@sm">
-			<div class="margin-bottom-xxxs">
+			<div class="margin-bottom-xxxs text-md">
 				{% if startTime %}
 					{% if startTime|date('H:i') < '18:00' %}
 						<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg>
@@ -31,18 +31,19 @@
 					{% endif %}
 					&nbsp;
 				{% endif %}
-				{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.Y') }}{% else %}TBC{% endif %}
+				{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.Y') }}{% if entry.endDate %}–{{ entry.endDate|date('j.m.Y') }}{% endif %}{% else %}Event/Date To Be Confirmed{% endif %}
 				{% if startTime %} . {{ startTime|date('H:i') }}{% endif %}{% if entry.finishTime %}—{{ entry.finishTime|date('H:i') }}{% endif %}
-				{% if entry.communityEvent %} . Community Event{% else %} . Proto<span class="text-bold">space</span> Event{% endif %}
+				{# {% if entry.communityEvent %} . Community Event{% else %} . Proto<span class="text-bold">space</span> Event{% endif %} #}
 			</div>
 			<h1 class="text-xxl">{{ entry.title }}</h1>
 		</div>
 		<div class="event__title text-md text-xxl@sm text-xxxxl@md col-1@sm order-1@sm reveal-fx" data-reveal-fx-delta="50"><span class="text-bold hide@sm">Theme: </span><span class="color-{{ theme.themeColour }}">{{ theme.title }}</span></div>
 		
-		{% if entry.description or entry.website or entry.ticketUrl or entry.location %}
 		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg col-7@xl offset-3@lg offset-4@xl order-3@sm max-width-lg">
 			<div class="text-component">
-				{% if entry.ticketUrl %}<a href="{{ entry.ticketUrl }}" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>{% endif %}
+				{% if entry.ticketUrl %}<a href="{{ entry.ticketUrl }}" target="_blank" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>{% else %}<a href="#subscribe" class="btn btn--md width-100% height-100% max-width-xs margin-bottom-sm">Subscribe for updates &darr;</a>{% endif %}
+				
+				<p class="text-xl">{% if entry.communityEvent %}A Community Event{% if entry.organiser %} from {{ entry.organiser }}{% endif %}{% else %}A Proto<span class="text-bold">space</span> Event{% endif %}</p>
 				
 				<p class="text-bold">
 					{% if entry.location %}Location: {{ entry.location }}<br>{% endif %}
@@ -59,7 +60,6 @@
 				{% if entry.website %}<p><a href="{{ entry.website }}" target="_blank" class="text-bold">Visit the event website &nearr;</a></p>{% endif %}
 			</div>
 		</div>
-		{% endif %}
 	</div>
 	
 	{% set blocks = entry.speakers.all() %}

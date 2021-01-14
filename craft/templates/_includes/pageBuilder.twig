@@ -1,4 +1,4 @@
-{% for block in entry.pageBuilder %}
+{% for block in entry.pageBuilder.all %}
 
 {% switch block.type %}
 
@@ -7,6 +7,9 @@
 	
 	{% case "partners" %}
 	{% include '_includes/blocks/partners' %}
+	
+	{% case "bigHeading" %}
+	{% include '_includes/blocks/bigHeading' %}
 	
 {% endswitch %}
 {% endfor %}

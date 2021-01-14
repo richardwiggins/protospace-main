@@ -1,0 +1,18 @@
+fieldLayouts:
+  e156deba-2636-4ab4-9e83-6e7f8617b744:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e8fddcf7-2249-4f22-9fb7-7afb8545c061
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: generalGlobalCopy
+name: 'General Global Copy'

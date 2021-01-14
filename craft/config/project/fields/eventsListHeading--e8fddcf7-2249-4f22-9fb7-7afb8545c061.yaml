@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: d1a961de-982f-42d1-897d-1f5a71bc030e
+handle: eventsListHeading
+instructions: ''
+name: 'Events List Heading'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

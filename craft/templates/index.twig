@@ -30,7 +30,7 @@
 	</div>
     <div class="container margin-bottom-xs" id="events">
 		<form class="grid items-end">
-            <legend class="text-xxl margin-bottom-xs color-white">Events in 2021  <span class="font-light">&darr;</span></legend>
+            <legend class="text-xxl margin-bottom-xs color-white">{{ generalGlobalCopy.eventsListHeading }}  <span class="font-light">&darr;</span></legend>
             
             <div class="margin-bottom-xs text-bold text-lg">Protospace Themes</div>
             <ul class="col-7@sm flex margin-bottom-sm margin-0@sm">
@@ -73,8 +73,7 @@
         {% set startTime = entry.startTime %}
         
 		<a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }} js-filter__item{% if entry.communityEvent %} category-community{% endif %}" data-filter="{% if entry.communityEvent %}category-community{% else %}category-protospace{% endif %}">
-			<dt class="details-list__dt col-11 col-6@xs col-7@sm col-8@md"><span class="details-list__dt--title">{{ entry.title }}</span>
-            <span>A Community event by Barclays</span></dt>
+			<dt class="details-list__dt col-11 col-6@xs col-5@sm col-6@md"><span class="details-list__dt--title">{{ entry.title }}</span></dt>
 			<dd class="details-list__dd col-1 text-right">
             {% if startTime %}
                 {# {{ startTime|date('H:i') }} #}
@@ -86,7 +85,8 @@
             {% endif %}
             </dd>
 			<dd class="details-list__dd col-3 col-2@xs col-1@md">{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.y') }}{% else %}TBC{% endif %}</dd>
-			<dd class="details-list__dd details-list__dd--type col-9 col-3@xs col-2@sm">{% for rel in type %}{{ rel.title }}{% if loop.last %}{% else %} . {% endif %}{% endfor %}</dd>
+			<dd class="details-list__dd details-list__dd--type col-6 col-3@xs col-2@sm">{% for rel in type %}{{ rel.title }}{% if loop.last %}{% else %} . {% endif %}{% endfor %}</dd>
+            <dd class="details-list__dd details-list__dd--community col-3 offset-9@xs col-2@sm">{% if entry.communityEvent %}Community{% else %}Protospace{% endif %}</dd>
 		</a>
         {% endfor %}
 	</dl>

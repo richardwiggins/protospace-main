@@ -181,6 +181,13 @@ Usage: codyhouse.co/license
   }
 }
 
+.details-list__dd--community {
+  @include breakpoint(sm) {
+    --offset: var(--gap-x);
+    // margin-left: var(--offset);
+  }
+}
+
 .details-list__dd--type {
   transition: all .3s var(--ease-in-out);
   

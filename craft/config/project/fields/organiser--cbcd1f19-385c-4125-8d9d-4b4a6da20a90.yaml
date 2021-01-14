@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: a15f74ea-ebc2-4656-8557-e13b8b6a612f
+handle: organiser
+instructions: ''
+name: Organiser/Organisation
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
