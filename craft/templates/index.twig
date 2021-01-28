@@ -86,7 +86,7 @@
             </dd>
 			<dd class="details-list__dd col-3 col-2@xs col-1@md">{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.y') }}{% else %}TBC{% endif %}</dd>
 			<dd class="details-list__dd details-list__dd--type col-6 col-3@xs col-2@sm">{% for rel in type %}{{ rel.title }}{% if loop.last %}{% else %} . {% endif %}{% endfor %}</dd>
-            <dd class="details-list__dd details-list__dd--community col-3 offset-9@xs col-2@sm">{% if entry.communityEvent %}Community{% else %}Protospace{% endif %}</dd>
+            <dd class="details-list__dd details-list__dd--community col-3 offset-9@xs col-2@sm">{% if entry.communityEvent %}{% if entry.organiser %}{{ entry.organiser}}{% else %}Community{% endif %}{% else %}Protospace{% endif %}</dd>
 		</a>
         {% endfor %}
 	</dl>
