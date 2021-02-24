@@ -8,6 +8,7 @@
     "orderedlist",
     "link",
     "image",
+    "file",
     "video"
   ],
   "plugins": [
