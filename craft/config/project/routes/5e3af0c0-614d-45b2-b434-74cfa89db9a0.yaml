@@ -1,0 +1,13 @@
+siteUid: null
+sortOrder: 4
+template: /freeform-demo/bootstrap/delete_submission
+uriParts:
+  - freeform-demo/bootstrap/
+  -
+    - slug
+    - '[^\/]+'
+  - /submissions/delete/
+  -
+    - token
+    - \w+
+uriPattern: 'freeform-demo/bootstrap/<slug:[^\/]+>/submissions/delete/<token:\w+>'

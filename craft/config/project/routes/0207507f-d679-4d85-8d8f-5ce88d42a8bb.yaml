@@ -1,0 +1,10 @@
+siteUid: null
+sortOrder: 9
+template: /freeform-demo/custom/form
+uriParts:
+  - freeform-demo/custom/
+  -
+    - slug
+    - '[^\/]+'
+  - /success
+uriPattern: 'freeform-demo/custom/<slug:[^\/]+>/success'

@@ -1,0 +1,13 @@
+siteUid: null
+sortOrder: 3
+template: /freeform-demo/bootstrap/edit_submission
+uriParts:
+  - freeform-demo/bootstrap/
+  -
+    - slug
+    - '[^\/]+'
+  - /submissions/edit/
+  -
+    - token
+    - \w+
+uriPattern: 'freeform-demo/bootstrap/<slug:[^\/]+>/submissions/edit/<token:\w+>'
