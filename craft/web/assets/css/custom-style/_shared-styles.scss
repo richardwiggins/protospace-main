@@ -128,6 +128,42 @@
   stroke: #ff0000
 }
 
+.partner__logo {
+  max-height: 8rem;
+  max-width: 15rem;
+  width: 100%;
+}
+
+.partner__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  > div {
+    background: black;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    &::before {
+      // for apsect ratio
+      content: "";
+      display: block;
+      padding-bottom: 50%;
+      grid-area: 1 / 1 / 2 / 2;
+      
+      @include breakpoint(xs) {
+        padding-bottom: 100%;
+      }
+    }
+    a {
+      width: 100%;
+      // height: 100%;
+      // object-fit: contain;
+      grid-area: 1 / 1 / 2 / 2;
+      text-align: center;
+    }
+  }
+}
+
 // --------------------------------
 
 // (END) Global editor code

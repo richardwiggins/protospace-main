@@ -8,7 +8,7 @@
 
 {% if eventPartner | length %}
 <div class="container max-width-md padding-bottom-md{% if block.extraBottomPadding %} padding-bottom-xl{% endif %}">
-	<div class="grid gap-md">
+	
 		<div class="">
 			<div class="text-xxxl text-bold">{{ block.heading }}</div>
 			
@@ -19,13 +19,29 @@
 			{{ block.body }}
 		</div>
 		
-		<ul>
+		{# <ul class="grid border-bottom border-white">
 		{% for entry in eventPartner %}
 			{% for image in entry.partnerLogo.all %}				
-				<li><a href="{{ entry.website }}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="width-xxxxl"/></a></li>
+				<li class="border-top border-right border-bottom border-white padding-md col-6@md items-center flex items-center justify-center"><a href="{{ entry.website }}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="partner__logo"/></a></li>
 			{% endfor %}
 		{% endfor %}
-		</ul>
-	</div>
+		</ul> #}
+		
+		<div class="partner__grid">
+		{% for entry in eventPartner %}
+			{% for image in entry.partnerLogo.all %}
+				<div><a href="{{ entry.website }}" target="_blank"><img src="{{ image.getUrl() }}" alt="{{ entry.title }}" class="partner__logo"/></a></li></div>
+			{% endfor %}
+		{% endfor %}
+		</div>
+		
+		{# <table>
+			<tbody>
+				<tr>
+					<td>
+				</tr>
+			</tbody>
+		</table> #}
+	
 </div>
 {% endif %}

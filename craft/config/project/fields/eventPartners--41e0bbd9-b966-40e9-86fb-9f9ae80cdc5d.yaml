@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: a15f74ea-ebc2-4656-8557-e13b8b6a612f
+handle: eventPartners
+instructions: ''
+name: 'Event Partners'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Choose event partners'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:4de07478-c039-47a0-897b-67875adf4719'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries
