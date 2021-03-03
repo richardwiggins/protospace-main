@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: a15f74ea-ebc2-4656-8557-e13b8b6a612f
+handle: linkedEvent
+instructions: ''
+name: 'Linked Event'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Link an Event'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:b728d9a3-8b75-4fc1-9a5f-a989a14c1231'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

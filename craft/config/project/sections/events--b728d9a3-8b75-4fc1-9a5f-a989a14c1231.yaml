@@ -1,6 +1,18 @@
 enableVersioning: true
 handle: events
 name: Events
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - Events
+      -
+        - urlFormat
+        - 'events/{slug}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   6e03a237-40f3-4689-812b-c83d4bdd8201:

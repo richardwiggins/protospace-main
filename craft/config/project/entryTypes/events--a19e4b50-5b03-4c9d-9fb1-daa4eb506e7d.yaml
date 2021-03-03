@@ -144,7 +144,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 41e0bbd9-b966-40e9-86fb-9f9ae80cdc5d
+            fieldUid: 506a4f8c-4719-474e-9c4c-e033d6a5e37f
             instructions: null
             label: null
             required: false
@@ -154,6 +154,15 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 4baf8902-15be-4ffc-89fa-ad9f556ea740
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2f4a2554-c24d-4e4a-ad8f-b3d594154a71
             instructions: null
             label: null
             required: false
