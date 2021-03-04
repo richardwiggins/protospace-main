@@ -61,6 +61,6 @@ return [
         'allowAdminChanges' => true,
 
         // Don’t allow updates on Production
-        'allowUpdates' => false,
+        'allowUpdates' => true,
     ],
 ];

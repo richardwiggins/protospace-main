@@ -1,9 +1,13 @@
-dateModified: 1614789375
+dateModified: 1614877264
 email:
   fromEmail: richard@pooleyville.uk
   fromName: Protospace
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  embeddedassets:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   redactor:
     edition: standard
     enabled: true

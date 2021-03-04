@@ -27,6 +27,7 @@
 	<title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ defaultPartTitle }}{% else %}{{ seoTitleGlobal }}{% endif %}</title>
   <meta name="title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} {{ defaultPartTitle }}{% else %}{{ seoTitleGlobal }}{% endif %}">
   <meta name="description" content="{% if seoDescription is defined %}{{ seoDescription }}{% else %}{{ seoDescriptionGlobal }}{% endif %}">
+  <meta name="format-detection" content="telephone=no">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">

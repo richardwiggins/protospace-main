@@ -1,0 +1,35 @@
+contentColumnType: string
+fieldGroup: 828e167b-a215-4868-aca0-509b6cdf9b9e
+handle: asset
+instructions: ''
+name: 'Resource File or Link'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - compressed
+    - image
+    - pdf
+    - text
+  defaultUploadLocationSource: 'volume:a1ee91c7-d29e-4ada-9988-84807302f561'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: ''
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:7162d49d-518a-44a8-89c6-5fe53d5bb2c4'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

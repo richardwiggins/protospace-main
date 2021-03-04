@@ -1,0 +1,15 @@
+{
+  "buttons": [
+    "html",
+    "link",
+    "image",
+    "file",
+    "video"
+  ],
+  "plugins": [
+    "fullscreen",
+    "video"
+  ],
+  "linkNewTab": true,
+  "toolbarFixed": true
+}

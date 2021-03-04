@@ -3,6 +3,7 @@
     "craftcms/cms": "3.6.7",
     "craftcms/redactor": "2.8.5",
     "solspace/craft-freeform": "3.10.8",
+    "spicyweb/craft-embedded-assets": "2.5.1",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {

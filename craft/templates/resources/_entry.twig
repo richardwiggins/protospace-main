@@ -1,0 +1,69 @@
+{% extends "/main" %}
+
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
+{% block main %}
+
+{% set event = entry.linkedEvent.one() %}
+{% if event %}
+	{% set theme = event.eventTheme.one %}
+{% endif %}
+
+<div class="container padding-top-lg">
+	<div class="grid gap-sm">
+		<div class="col-11@sm col-10@md offset-1@md col-9@lg offset-2@lg col-8@xl offset-3@xl order-2@sm">
+			{% if event %}<span class="color-{{ theme.themeColour }} text-md">{{ theme.title }}</span> {% endif %}
+			<h1 class="text-xxl">{{ entry.title }}</h1>
+			{% if event %}<h2 class="color-contrast-high text-lg">Event: <a href="{{ event.url }}">{{ event.title }}</a></h2>{% endif %}
+		</div>
+		
+		<div class="event__title text-md text-xxl@sm text-xxxxl@md col-1@sm order-1@sm reveal-fx color-contrast-medium" data-reveal-fx-delta="50">Resources</div>
+		
+		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg col-7@xl offset-3@lg offset-4@xl order-3@sm max-width-lg">
+			<div class="text-component">
+				{% for items in entry.asset.all() %}
+					{% set embedded = craft.embeddedAssets.get(items) %}
+					{% if embedded %}
+						<figure class="video">{{ embedded ? embedded.html }}</figure>
+					{% else %}
+						{% set resource = entry.asset.one() %}
+						
+						{% set resourceFile = entry.asset.kind('pdf').one() or entry.asset.kind('compressed').one() or entry.asset.kind('text').one() %}
+						{% set resourceImage = entry.asset.kind('image').one() %}
+						
+						{% if resourceFile %}
+							<p><b>Download</b></p>
+							<p class="text-lg">&DownArrowBar; <a href="{{ resourceFile.url }}" download>{{ resourceFile.title }}</a></p>
+						{% endif %}
+						
+						{% if resourceImage %}
+							<img src="{{ resourceImage.getUrl('generic') }}" alt="{{ resourceImage.title }}"/>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				
+				{% if entry.website %}
+					
+					<p><b>Visit</b></p>
+					<p class="text-lg">&nearr; <a href="{{ entry.website }}">{{ entry.website }}</a></p>
+				{% endif %}
+				
+				{{ entry.body }}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+{% endblock %}
