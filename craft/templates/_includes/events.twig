@@ -40,7 +40,33 @@
 				</p>
 				
 				{{ entry.description }}
+			</div>
 				
+			<ul class="accordion  js-accordion margin-top-md" data-animation="on" data-multi-items="on">
+				{% for block in entry.accordion.all() %}
+				{% if block.type == "faqs" %}
+				  <li class="accordion__item {% if loop.first %}accordion__item--is-open {% endif %}js-accordion__item">
+					<button class="reset accordion__header padding-y-sm js-tab-focus" type="button">
+					  <span class="text-bold text-xl">{{ block.heading }}</span>
+				
+					  <svg class="icon accordion__icon-arrow no-js:is-hidden" viewBox="0 0 16 16" aria-hidden="true">
+						<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10">
+						  <path d="M2 2l12 12" />
+						  <path d="M14 2L2 14" />
+						</g>
+					  </svg>
+					</button>
+				
+					<div class="accordion__panel js-accordion__panel">
+					  <div class="text-component padding-top-xxxs padding-bottom-md">
+						{{ block.body }}
+					  </div>
+					</div>
+				  </li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+			<div class="text-component">
 				{% if entry.website %}<p><a href="{{ entry.website }}" target="_blank" class="text-bold">Visit the event website &nearr;</a></p>{% endif %}
 			</div>
 		</div>
