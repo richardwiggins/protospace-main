@@ -19,7 +19,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>document.getElementsByTagName("html")[0].className += " js";</script>
-	<link id="codyframe" rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?5s4s54">
+	<link id="codyframe" rel="stylesheet" href="{{ siteUrl }}assets/css/style.css?d5547">
 	<!-- Uncomment the script below if you need to support browsers where CSS Variables have not been implemented (e.g., IE11) -->
 	<script>
 	if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
@@ -80,7 +80,8 @@
 					<li class="f-header__item"><a href="{{ siteUrl }}about" class="f-header__link">About</a></li>
           <li class="f-header__item"><a href="{{ siteUrl }}partners" class="f-header__link">Partners</a></li>
 					<li class="f-header__item"><a href="mailto:hello@protospace.uk" class="f-header__link">Contact</a></li>
-          <li class="f-header__item"><a href="#subscribe" class="f-header__link">Subscribe</a></li>
+          {# <li class="f-header__item"><a href="#subscribe" class="f-header__link">Subscribe</a></li> #}
+          <li class="f-header__item"><a href="#subscribe" class="f-header__btn btn btn--primary">Subscribe</a></li>
 				</ul>
 			</div>
 		</div>
