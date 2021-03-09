@@ -24,7 +24,11 @@
 		<div class="col-11@sm col-10@md offset-1@md col-9@lg offset-2@lg col-8@xl offset-3@xl order-2@sm">
 			{% if event %}<span class="color-{{ theme.themeColour }} text-md">{{ theme.title }}</span> {% endif %}
 			<h1 class="text-xxl">{{ entry.title }}</h1>
-			{% if event %}<h2 class="color-contrast-high text-lg">Event: <a href="{{ event.url }}">{{ event.title }}</a></h2>{% endif %}
+			{% if event %}
+				<h2 class="color-contrast-high text-lg">Event: <a href="{{ event.url }}">{{ event.title }}</a> – {{ entry.dateField|date('j.m.Y') }}</h2>
+			{% else %}
+				<span class="text-bold">{{ entry.postDate|date('j.m.Y') }}</span>
+			{% endif %}
 		</div>
 		
 		<div class="event__title text-md text-xxl@sm text-xxxxl@md col-1@sm order-1@sm reveal-fx color-contrast-medium" data-reveal-fx-delta="50">Resources</div>

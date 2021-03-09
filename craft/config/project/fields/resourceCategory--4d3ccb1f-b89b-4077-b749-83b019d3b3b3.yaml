@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 828e167b-a215-4868-aca0-509b6cdf9b9e
+handle: resourceCategory
+instructions: ''
+name: 'Resource Category'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: 'group:08c51099-e007-47bb-b196-0e6846f0e1f2'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

@@ -1,0 +1,18 @@
+fieldLayouts:
+  0f6590fe-a34c-4bc4-be80-d7cdc60599e5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a8e1cfbf-5594-4c5e-b1ae-50337be2e3bf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: pageBuilder
+name: 'Page Builder'

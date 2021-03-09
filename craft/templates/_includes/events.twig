@@ -42,7 +42,7 @@
 				{{ entry.description }}
 			</div>
 				
-			<ul class="accordion  js-accordion margin-top-md" data-animation="on" data-multi-items="on">
+			<ul class="accordion js-accordion margin-top-md" data-animation="on" data-multi-items="on">
 				{% for block in entry.accordion.all() %}
 				{% if block.type == "faqs" %}
 				  <li class="accordion__item {% if loop.first %}accordion__item--is-open {% endif %}js-accordion__item">
@@ -66,7 +66,7 @@
 				{% endif %}
 				{% endfor %}
 			</ul>
-			<div class="text-component">
+			<div class="text-component margin-top-lg">
 				{% if entry.website %}<p><a href="{{ entry.website }}" target="_blank" class="text-bold">Visit the event website &nearr;</a></p>{% endif %}
 			</div>
 		</div>

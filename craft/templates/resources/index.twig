@@ -1,0 +1,108 @@
+{% extends "/main" %}
+
+{% if entry.seoTitle %}
+	{% set title = entry.seoTitle %}
+{% else %}
+	{% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+	{% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+	{% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
+{% set resources = craft.entries({
+  section: 'resources',
+  
+  with: [
+  'entry.title'
+  ]
+}).all %}
+
+{% block main %}
+
+<div class="container max-width-lg padding-y-lg">
+	<h1 class="text-xxxxl reveal-fx" data-reveal-fx-delta="50">{{ entry.heading }}</h1>
+</div>
+
+{% include '_includes/pageBuilder' %}
+
+<div class="container margin-bottom-xs" id="events">
+	<form class="grid items-end">
+		{# <legend class="text-xxl margin-bottom-xs color-white">{{ generalGlobalCopy.eventsListHeading }}  <span class="font-light">&darr;</span></legend> #}
+		
+		{# <div class="margin-bottom-xxs text-bold text-lg">Protospace Media Library</div> #}
+		{# <ul class="col-7@sm flex margin-bottom-sm margin-0@sm">
+			<li class="flex-grow">
+				<div class="text-sm margin-bottom-xs display@sm">January / February / March</div>
+				<div class="color-accent">Sustainability</div>
+			</li>
+			<li class="flex-grow">
+				<div class="text-sm margin-bottom-xs display@sm">April / May / June</div>
+				<div class="color-tertiary">Lifestyle</div>
+			</li>
+			<li class="flex-grow">
+				<div class="text-sm margin-bottom-xs display@sm">July / August / September</div>
+				<div class="color-secondary-lighter">Business</div>
+			</li>
+		</ul> #}
+		
+		  {# <fieldset class="col-5@sm text-right@sm">
+			<legend class="form-legend is-hidden">Filter Events</legend>
+			
+			<ul class="radio-switch-v2" aria-controls="filter-gallery">
+				  <li class="radio-switch-v2__item">
+					<input class="radio-switch-v2__input reset" type="radio" name="radio-category" id="radio1" data-filter="*" checked>
+					<label class="radio-switch-v2__label" for="radio1">All Events</label>
+				  </li>
+				
+				  <li class="radio-switch-v2__item">
+					<input class="radio-switch-v2__input reset" type="radio" name="radio-category" id="radio2" data-filter="category-protospace">
+					<label class="radio-switch-v2__label" for="radio2">Protospace Events</label>
+					<div aria-hidden="true" class="radio-switch-v2__toggle"><span class="radio-switch-v2__marker"></span></div>
+				  </li>
+			</ul>
+		  </fieldset> #}
+	</form>
+</div>
+<dl class="details-list js-filter" id="filter-gallery" data-filter-animation="off">
+	{% for entry in resources %}
+	{% set category = entry.resourceCategory.one %}
+	{% set event = entry.linkedEvent.one() %}
+	{% if event %}
+		{% set theme = event.eventTheme.one %}
+	{% endif %}
+	{# {% set type = entry.eventType.all %}
+	{% set theme = entry.eventTheme.one %}
+	{% set startTime = entry.startTime %} #}
+	
+	<a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }} js-filter__item" data-filter="">
+		<dt class="details-list__dt col-12 col-6@xs col-6@sm"><span class="details-list__dt--title">{{ entry.title }}</span></dt>
+		
+		<dd class="details-list__dd col-6 col-4@sm col-5@md text-right@xs text-left@sm">{% if event %}Event: {{ event.title }}{% endif %}</dd>
+		<dd class="details-list__dd col-6 col-12@xs col-2@sm col-1@md text-right details-list__dd--xs">{{ category }}</dd>
+	</a>
+	{# <a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }} js-filter__item{% if entry.communityEvent %} category-community{% endif %}" data-filter="{% if entry.communityEvent %}category-community{% else %}category-protospace{% endif %}">
+		<dt class="details-list__dt col-11 col-6@xs col-5@sm col-6@md"><span class="details-list__dt--title">{{ entry.title }}</span></dt>
+		<dd class="details-list__dd col-1 text-right">
+		{% if startTime %}
+			{% if startTime|date('H:i') < '18:00' %}
+				<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg>
+			{% else %}
+				<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2.5.9 0 4.1 0 7.9 0 12.4 3.6 16 8.1 16c3.8 0 6.9-2.5 7.9-6C9.9 11.7 4.3 6.1 6 0z" fill="#FFF" fill-rule="nonzero"/></svg>
+			{% endif %}
+		{% endif %}
+		</dd>
+		<dd class="details-list__dd col-3 col-2@xs col-1@md">{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.y') }}{% else %}TBC{% endif %}</dd>
+		<dd class="details-list__dd details-list__dd--type col-6 col-3@xs col-2@sm">{% for rel in type %}{{ rel.title }}{% if loop.last %}{% else %} . {% endif %}{% endfor %}</dd>
+		<dd class="details-list__dd details-list__dd--community col-3 offset-9@xs col-2@sm">{% if entry.communityEvent %}{% if entry.organiser %}{{ entry.organiser}}{% else %}Community{% endif %}{% else %}Protospace{% endif %}</dd>
+	</a> #}
+	{% endfor %}
+</dl>
+	
+<div class="margin-top-md" data-fallback-gallery-id="filter-gallery">
+	<p class="color-contrast-medium text-center">No results</p>
+</div>
+	
+{% endblock %}

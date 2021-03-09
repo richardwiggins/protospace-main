@@ -181,6 +181,16 @@ Usage: codyhouse.co/license
   }
 }
 
+.details-list__dd--xs {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  
+  @include breakpoint(xl) {
+    font-size: var(--text-sm);
+  }
+}
+
 .details-list__dd--community {
   @include breakpoint(sm) {
     --offset: var(--gap-x);

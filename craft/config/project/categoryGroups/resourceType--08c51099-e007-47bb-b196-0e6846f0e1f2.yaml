@@ -1,0 +1,40 @@
+fieldLayouts:
+  6a8dfd4a-207c-4200-ac9d-99c4b052c7ce:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: resourceType
+name: 'Resource Type'
+siteSettings:
+  6e03a237-40f3-4689-812b-c83d4bdd8201:
+    hasUrls: true
+    template: null
+    uriFormat: 'resource-type/{slug}'
+structure:
+  maxLevels: 1
+  uid: 7d8834e0-4d73-49ec-997d-be11c4e2b5f4
