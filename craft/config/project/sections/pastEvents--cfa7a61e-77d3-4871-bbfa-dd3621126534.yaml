@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: pastEvents
+name: 'Past Events'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  6e03a237-40f3-4689-812b-c83d4bdd8201:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/past
+    uriFormat: past-events
+type: single

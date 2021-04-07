@@ -1,0 +1,61 @@
+{% extends "/main" %}
+
+{% if entry.seoTitle %}
+  {% set title = entry.seoTitle %}
+{% else %}
+  {% set title = entry.title %}
+{% endif %}
+{% if entry.seoDescription %}
+  {% set seoDescription = entry.seoDescription %}
+{% endif %}
+{% if entry.seoKeywords %}
+  {% set seoKeywords = entry.seoKeywords %}
+{% endif %}
+
+{% set pastEvents = craft.entries({
+section: 'events',
+dateField: '<=' ~ now|date('Y-m-d'),
+orderBy: 'dateField desc',
+with: [
+'entry.title',
+'entry.dateField'
+]
+}).all %}
+
+{% block main %}
+
+<div class="container max-width-lg padding-y-lg">
+  <h1 class="text-xxxxl reveal-fx" data-reveal-fx-delta="50">{{ entry.heading }}</h1>
+</div>
+
+<div class="container max-width-md padding-bottom-md">
+  <div class="text-component line-height-lg v-space-lg">
+    {{ entry.body }}
+  </div>
+</div>
+
+<dl class="details-list">
+  {% for entry in pastEvents %}
+  {% set type = entry.eventType.all %}
+  {% set theme = entry.eventTheme.one %}
+  {% set startTime = entry.startTime %}
+  
+<a href="{{ entry.url }}" class="details-list__item grid {{ theme.themeColour }}{% if entry.communityEvent %} category-community{% endif %}">
+<dt class="details-list__dt col-11 col-6@xs col-5@sm col-6@md"><span class="details-list__dt--title">{{ entry.title }}</span></dt>
+<dd class="details-list__dd col-1 text-right">
+      {% if startTime %}
+          {# {{ startTime|date('H:i') }} #}
+          {% if startTime|date('H:i') < '18:00' %}
+              <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 14v2H7v-2h2zm3.949-2.395l1.415 1.413-1.414 1.415-1.415-1.414 1.414-1.414zm-9.968-.069l1.414 1.415-1.415 1.412-1.414-1.413 1.415-1.414zM8 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm8 3v2h-2V7h2zM2 7v2H0V7h2zm1.05-5.293L4.465 3.12 3.05 4.535 1.636 3.121 3.05 1.707zm9.83-.07l1.414 1.415-1.415 1.413-1.414-1.414 1.415-1.414zM9 0v2H7V0h2z" fill="#FFF" fill-rule="nonzero"/></svg>
+          {% else %}
+              <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2.5.9 0 4.1 0 7.9 0 12.4 3.6 16 8.1 16c3.8 0 6.9-2.5 7.9-6C9.9 11.7 4.3 6.1 6 0z" fill="#FFF" fill-rule="nonzero"/></svg>
+          {% endif %}
+      {% endif %}
+      </dd>
+<dd class="details-list__dd col-3 col-2@xs col-1@md">{% if entry.eventConfirmed %}{{ entry.dateField|date('j.m.y') }}{% else %}TBC{% endif %}</dd>
+<dd class="details-list__dd details-list__dd--type col-6 col-3@xs col-2@sm">{% for rel in type %}{{ rel.title }}{% if loop.last %}{% else %} . {% endif %}{% endfor %}</dd>
+      <dd class="details-list__dd details-list__dd--community col-3 offset-9@xs col-2@sm">{% if entry.communityEvent %}{% if entry.organiser %}{{ entry.organiser}}{% else %}Community{% endif %}{% else %}Protospace{% endif %}</dd>
+</a>
+  {% endfor %}
+</dl>
+{% endblock %}
