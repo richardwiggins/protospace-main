@@ -2,6 +2,7 @@
 {% set theme = entry.eventTheme.one %}
 {% set startTime = entry.startTime %}
 {% set eventPartner = entry.eventPartners.all() %}
+{% set thisEventDate = entry.dateField|date('Y-m-d') %}
 
 <div class="container padding-top-lg">
 	<div class="grid gap-sm">
@@ -25,7 +26,20 @@
 		
 		<div class="col-11@sm offset-1@sm col-10@md offset-2@md col-8@lg col-7@xl offset-3@lg offset-4@xl order-3@sm max-width-lg">
 			<div class="text-component">
-				{% if entry.ticketUrl %}<a href="{{ entry.ticketUrl }}" target="_blank" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>{% else %}<a href="#subscribe" class="btn btn--md width-100% height-100% max-width-xs margin-bottom-sm">Subscribe for updates &darr;</a>{% endif %}
+				{# {% set events = craft.entries({
+				  section: 'events',
+				  dateField: '>=' ~ now|date('Y-m-d'),
+				  orderBy: 'dateField asc',
+				  with: [
+				  'entry.title',
+				  'entry.dateField'
+				  ]
+				}).all %} #}
+				{# {% if thisEventDate >= now|date('Y-m-d') %}Future{% else %}Past{% endif %} #}
+				{# {% if entry.dateField '>=' ~ now|date('Y-m-d') %}Past{% else %}Future{% endif %} #}
+				{% if thisEventDate >= now|date('Y-m-d') %}
+					{% if entry.ticketUrl %}<a href="{{ entry.ticketUrl }}" target="_blank" class="btn btn--primary btn--md width-100% height-100% max-width-xs margin-bottom-sm">Register your ticket &nearr;</a>{% else %}<a href="#subscribe" class="btn btn--md width-100% height-100% max-width-xs margin-bottom-sm">Subscribe for updates &darr;</a>{% endif %}
+				{% endif %}
 				
 				<p class="text-xl">{% if entry.communityEvent %}A Community Event{% if entry.organiser %} from {{ entry.organiser }}{% endif %}{% else %}A Proto<span class="text-bold">space</span> Event{% endif %}</p>
 				
